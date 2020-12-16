@@ -1,0 +1,27 @@
+<div style="margin-left: 330px;">
+    <table border=".1">
+        <tr style="font-weight: bold;">
+            <td>
+                Name
+            </td>
+            <td>
+                Temperament
+            </td>
+            <!-- <td>
+                Image
+            </td> -->
+        </tr>
+
+        <tr *ngFor="let cat of catList">
+            <td>
+                {{cat.name}}
+            </td>
+            <td>
+                {{cat.temperament}}
+            </td>
+            <!-- <td *ngIf="cat.image.url">
+                <img [src]="cat.image.url" style="width: 100px;">
+            </td> -->
+        </tr>
+    </table>
+</div>
