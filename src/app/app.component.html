@@ -290,18 +290,11 @@
 </style>
 
 <div class="toolbar" role="banner">
-  <span style="margin-left: auto;">
+  <span style="margin-left: 10px; margin-right: 28px;">
     <h2>TUE<a style="color: rgb(109, 16, 16);">(F)</a>ACT</h2>
   </span>
+  It's all about cats
   <div class="spacer"></div>
-  <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
-    <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-      <rect width="400" height="400" fill="none" />
-      <path
-        d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23"
-        fill="#fff" />
-    </svg>
-  </a>
 </div>
 
 <div class="content" role="main">
@@ -310,30 +303,30 @@
     <h1>THE ULTIMATE EXTREME <a style="color: rgb(109, 16, 16);">(FURIOUSLY)</a> AMAZING <u>CAT FINDER</u></h1>
   </div>
 
-  <h3>What about cats!?</h3>
-  <h4>Search cat by breed if you can</h4>
+  <h2>What about cats!?</h2>
+  <h3>Search for a cat by breed if you can</h3>
 
   <div class="card-container"></div>
   <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
     <div style="margin:auto;">
-      <input name="cat" ngModel required> <br> <br>
-      <input type="submit" value="Bring me this cat now!"> <br>
+      <input name="cat" value="type breed" ngModel required>
+      <input class="bt-az" type="submit" value="Bring me this cat now!"> <br>
     </div>
   </form>
   <br>
 
-  <div class="terminal" style="margin:auto;">
-    <pre><span *ngIf="error" style="color:red">{{errorMessage}}</span> <br></pre>
-    <pre><span *ngIf="!error" style="color:rgb(34, 255, 0)">{{cat.name}}</span><br></pre>
+  <div class="terminal" style="margin:auto; height: auto;">
+    <pre><span *ngIf="error" style="color:red">{{errorMessage}}</span></pre>
+    <pre><span *ngIf="hasCat" style="color:rgb(34, 255, 0)">Oh yeah, baby! {{cat.name}} was find!</span></pre> <br>
+    <pre><span *ngIf="hasCat" style="color:rgb(34, 255, 0);  white-space: normal;">Well, my dear TUEFACT searcher.. what about {{cat.name}}s you ask me? <br>{{cat.description}}</span></pre>
   </div>
 </div>
 
 <div class="card-container">
-  <b>Some cats for you to take a look at! Now!</b>
+  <h2>Some cats for you to take a look at! Now!</h2>
 </div>
-
+<br>
 <app-cats></app-cats>
-
 <br><br><br>
 
 <footer>

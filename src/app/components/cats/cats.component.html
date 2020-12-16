@@ -1,5 +1,5 @@
-<div style="margin-left: 330px;">
-    <table border=".1">
+<div>
+    <table class="styled-table">
         <tr style="font-weight: bold;">
             <td>
                 Name
@@ -7,9 +7,9 @@
             <td>
                 Temperament
             </td>
-            <!-- <td>
-                Image
-            </td> -->
+            <td>
+                That's what he looks like
+            </td>
         </tr>
 
         <tr *ngFor="let cat of catList">
@@ -19,9 +19,9 @@
             <td>
                 {{cat.temperament}}
             </td>
-            <!-- <td *ngIf="cat.image.url">
-                <img [src]="cat.image.url" style="width: 100px;">
-            </td> -->
+            <td *ngIf="cat.image.url">
+                <img [src]="cat.image.url" style="width: 180px;">
+            </td>
         </tr>
     </table>
 </div>
