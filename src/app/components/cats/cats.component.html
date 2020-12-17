@@ -1,5 +1,5 @@
 <div>
-    <table class="styled-table">
+    <table class="styled-table" style="color: white;">
         <tr style="font-weight: bold;">
             <td>
                 Name
@@ -8,19 +8,25 @@
                 Temperament
             </td>
             <td>
+                Weight
+            </td>
+            <td>
                 That's what he looks like
             </td>
         </tr>
 
         <tr *ngFor="let cat of catList">
             <td>
-                {{cat.name}}
+                {{cat.name | uppercase }}
             </td>
             <td>
                 {{cat.temperament}}
             </td>
+            <td>
+                {{cat.weight.metric }}
+            </td>
             <td *ngIf="cat.image.url">
-                <img [src]="cat.image.url" style="width: 180px;">
+                <img [src]="cat.image.url" style="width: 100px; height: 100px; border-radius: 50px;">
             </td>
         </tr>
     </table>
