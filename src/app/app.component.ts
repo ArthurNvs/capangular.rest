@@ -21,12 +21,26 @@ export class AppComponent {
     }
   };
 
+  catList: Cat[] = [];
+
   error: boolean = false;
   hasCat: boolean = false;
 
   errorMessage: string = "";
 
   constructor(private service: CatService) { }
+
+  ngOnInit(): void {
+    this.service.getCats().subscribe(
+      (response: any) => {
+        this.catList = response;
+        this.catList.map(result => {
+          this.service.getCat(result.name)
+            .subscribe(res => result = res[0]), (error: HttpErrorResponse) => console.log(error);
+        })
+      }
+    );
+  }
 
   onSubmit(form: NgForm) {
 
@@ -56,6 +70,7 @@ export class AppComponent {
     this.error = true;
     this.hasCat = false;
     this.errorMessage = "If you don't insert a cat breed, how can I guess??"
+    console.log(this.cat.image.url);
 
   }
 }

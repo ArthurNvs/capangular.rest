@@ -17,13 +17,13 @@
 
         <tr *ngFor="let cat of catList">
             <td>
-                {{cat.name | uppercase }}
+                {{ cat.name | uppercase }}
             </td>
             <td>
-                {{cat.temperament}}
+                {{ cat.temperament }}
             </td>
             <td>
-                {{cat.weight.metric }}
+                {{ cat.weight.metric }}
             </td>
             <td *ngIf="cat.image.url">
                 <img [src]="cat.image.url" style="width: 100px; height: 100px; border-radius: 50px;">
